@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-class Home extends React.Component{
+class RouterHome extends React.Component{
     render(){
         return(
             <div>
-                <div>This is Home!</div>
+                <div>This is RouterHome!</div>
                 <div>
                     <Link to="/PageOne/">点击</Link>
                 </div>
@@ -12,4 +12,4 @@ class Home extends React.Component{
         );
     }
 }
-export default Home;
+export default RouterHome;
