@@ -7,7 +7,7 @@ class PageTwo extends React.Component {
       <div>
         <div>This is PageTwo!</div>
         <div>
-          <Link to="/PageThree/">点击跳转到PageThree</Link>
+          <Link to = "/PageThree/">点击跳转到PageThree</Link>
         </div>
       </div>
     );

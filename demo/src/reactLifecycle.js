@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class SubComp extends React.Component {
   constructor(props) {
-    console.log(props.order + "constructor");
+    console.log(props.order + 'constructor');
     super(props);
     this.state = {
       isUpdate: false
@@ -12,7 +12,7 @@ class SubComp extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props.order + "componentWillMount");
+    console.log(this.props.order + 'componentWillMount');
   }
 
   componentDidMount() {
@@ -24,7 +24,7 @@ class SubComp extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(this.props.order + "shouldComponentUpdate");
+    console.log(this.props.order + 'shouldComponentUpdate');
     return true
   }
 
@@ -37,17 +37,17 @@ class SubComp extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log(this.props.order + "componentWillUnmount");
+    console.log(this.props.order + 'componentWillUnmount');
   }
 
   render() {
     console.log(this.props.order + 'render start');
     return (
-      <button onClick={ () => {
+      <button onClick = { () => {
         this.setState({ isUpdate: true })
       } }>
         { this.props.order + ' button updated? : ' + this.state.isUpdate }
-        <br/>
+        <br />
       </button>
     )
   }
@@ -58,14 +58,14 @@ class SupComp extends React.Component {
 
   constructor(props) {
     console.log(props);
-    console.log("constructor");
+    console.log('constructor');
 
     super(props);
     this.state = {}
   }
 
   componentWillMount() {
-    console.log("componentWillMount");
+    console.log('componentWillMount');
   }
 
   componentDidMount() {
@@ -77,7 +77,7 @@ class SupComp extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
+    console.log('shouldComponentUpdate');
     return true
   }
 
@@ -90,16 +90,16 @@ class SupComp extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("componentWillUnmount");
+    console.log('componentWillUnmount');
   }
 
   render() {
     console.log('render start');
     return (
       <div>
-        <SubComp order="child"/>
-        <br/>
-        <button onClick={ () => {
+        <SubComp order = 'child' />
+        <br />
+        <button onClick = { () => {
           this.forceUpdate()
         } }>
           force update

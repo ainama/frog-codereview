@@ -7,7 +7,7 @@ class RouterHome extends React.Component {
       <div>
         <div>This is RouterHome!</div>
         <div>
-          <Link to="/PageOne/">点击</Link>
+          <Link to = "/PageOne/">点击</Link>
         </div>
       </div>
     );
