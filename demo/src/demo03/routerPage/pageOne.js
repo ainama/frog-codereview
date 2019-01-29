@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class RouterHome extends React.Component {
+class PageOne extends React.Component {
   render() {
     return (
       <div>
-        <div>This is RouterHome!</div>
+        <div>This is PageOne!</div>
         <div>
-          <Link to = "/PageOne/">点击</Link>
+          <Link to = '/PageTwo/'>点击跳转到PageTwo</Link>
         </div>
       </div>
     );
   }
 }
 
-export default RouterHome;
+export default PageOne;

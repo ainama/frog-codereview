@@ -113,40 +113,13 @@ class SupComp extends React.Component {
 SupComp.defaultProps = {
   name: 'default name'
 };
+
 //属性类型检查
 SupComp.propTypes = {
   name: PropTypes.string
 };
 
-/* 定义一个属性是特定的JS类型（Array,Boolean,Function,Number,Object,String,Symbol）。默认情况下，这些都是可选的。
-指定类型为：任何可以被渲染的元素，包括数字，字符串，react 元素，数组，fragment。
-optionalNode: PropTypes.node,
-指定类型为：一个react 元素
-optionalElement: PropTypes.element,
-你可以类型为某个类的实例，这里使用JS的instanceOf操作符实现
-optionalMessage: PropTypes.instanceOf(Message), */
-
 ReactDOM.render(
   <SupComp />,
   document.getElementById('root')
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
