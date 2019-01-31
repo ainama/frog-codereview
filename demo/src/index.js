@@ -4,7 +4,9 @@
 //import './demo04/index.js';  // react-redux redux:每个方法的用法以及作用
 //import './demo06/index.js';  // react-redux 表单列表页面(复制)2
 //import './demo07/index.js';  //state,props应用
-import './demo05/index.js';  // react-redux 表单列表页面
+//import './demo05/index.js';  // react-redux 表单列表页面
+//import './demo08/index.js';  //ajax在componentDidMount里请求
+import './demo09/index.js';  //refs的用法
 
 
 

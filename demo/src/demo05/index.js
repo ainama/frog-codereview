@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { bindActionCreators, } from 'redux';
 import { Provider, connect } from 'react-redux';
+
 import finish from '../img/finish.png';
 import finish_active from '../img/finish_active.png';
+
 import * as actions from './action';
 import store from './store';
+
 import './sass/index.scss';
 
 class App extends Component {
@@ -17,11 +20,12 @@ class App extends Component {
 
   _SubmitValue() {
     let value = this.props.propsValue;
+
     if (value === '') {
       alert('内容不能为空');
       return;
-
     }
+
     this.props.actions.changeButton(value);
   }
 
@@ -35,7 +39,6 @@ class App extends Component {
   }
 
   render() {
-    const _this = this;
     const {
       propsValue,
       inputlist
@@ -59,22 +62,24 @@ class App extends Component {
         </div>
         <div className = 'clearfloat'></div>
         <div className = 'comment-list'>
+
           {
-            inputlist.map(function (inputlist, i) {
+
+            inputlist.map((inputlist, i) => {
               return (
-                <div key = { i }
-                     className = { inputlist.isFinish ? 'gary-color comment-list-style' : 'black-color comment-list-style' }>
+                <div
+                  key = { i }
+                  className = { inputlist.isFinish ? 'gary-color comment-list-style' : 'black-color comment-list-style' }>
                   <img
                     src = { inputlist.isFinish ? finish_active : finish }
                     alt = ''
-                    onClick = { () => _this._FinishState(i) }
-                  />
+                    onClick = { () => this._FinishState(i) } />
                   <input
                     className = 'revisetext'
                     type = 'text'
                     value = { inputlist.value }
                     readOnly = { inputlist.isFinish ? 'readOnly' : '' }
-                    onChange = { (e) => _this._ChangeRevise(e, i) } />
+                    onChange = { (e) => this._ChangeRevise(e, i) } />
                 </div>
               )
             })

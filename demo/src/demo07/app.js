@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MyComponent from './myComponent.js';
+import MyContent from './myContent.js';
 
 class App extends Component {
   constructor(props, context) {
@@ -16,21 +16,19 @@ class App extends Component {
   }
 
   render() {
-    const {
-      type
-    } = this.props;
+    const { type } = this.props;
+    const { inputvalue } = this.state;
 
     return (
       <div>
         <input
           type = { type }
-          value = { this.state.inputvalue }
+          value = { inputvalue }
           onChange = { (e) => this._changevalue(e) } />
-        <MyComponent title = { this.state.inputvalue } />
+        <MyContent title = { inputvalue } />
       </div>
     )
   }
-
 }
 
 export default App
