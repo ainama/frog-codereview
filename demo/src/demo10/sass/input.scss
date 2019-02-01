@@ -1,0 +1,169 @@
+body {
+  /*font-size: 100%;*/
+}
+
+.box {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 31px;
+  font-size: 100%;
+
+}
+
+.box-row {
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.box-column {
+  flex-direction: column;
+
+}
+
+.round {
+  width: 4px;
+  height: 4px;
+  background: #e25e49;
+  border-radius: 50%;
+}
+
+.textname {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #424242;
+  line-height: 13px;
+
+}
+
+.textname-left {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.textname-top {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.inputstyle {
+  position: relative;
+
+  input {
+    width: 218px;
+    height: 28px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #212121;
+    line-height: 12px;
+
+  }
+
+  input::-webkit-input-placeholder {
+    color: #999999;
+
+  }
+
+  input:-moz-placeholder {
+    color: #999999;
+
+  }
+
+  input::-moz-placeholder {
+    color: #999999;
+
+  }
+
+  input:-ms-input-placeholder {
+    color: #999999;
+
+  }
+
+  input[type="text"]:focus {
+    width: 218px;
+    background: #ffffff;
+    border: 1px solid #7fb6f5;
+    box-shadow: 0 0 2px 1px rgba(127, 182, 245, 0.30), inset 0 1px 3px 1px rgba(0, 0, 0, 0.06);
+    border-radius: 2px;
+    outline: none;
+  }
+}
+
+.wronginputstyle {
+  position: relative;
+
+  input {
+    width: 218px;
+    height: 28px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #212121;
+    line-height: 12px;
+    background: #ffffff;
+    border: 1px solid #e25e49;
+    border-radius: 2px;
+
+  }
+
+  input::-webkit-input-placeholder {
+    color: #999999;
+
+  }
+
+  input:-moz-placeholder {
+    color: #999999;
+
+  }
+
+  input::-moz-placeholder {
+    color: #999999;
+
+  }
+
+  input:-ms-input-placeholder {
+    color: #999999;
+
+  }
+
+}
+
+.pointout {
+  font-family: PingFangSC-Regular;
+  font-size: 10px;
+  line-height: 10px;
+  color: #999999;
+}
+
+.normal {
+  color: #999999;
+}
+
+.wrong {
+  color: #e25e49;
+
+}
+
+.pointout-right {
+  margin-left: 10px;
+}
+
+.pointout-bottom {
+  margin-top: 6px;
+}
+
+.pointout-position {
+  position: absolute;
+  top: 36px;
+  left: 0;
+}
