@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Input from './input';
-import './sass/input.scss'
+
+import Page from './page.js';
 
 ReactDOM.render(
-  <Input type='text' />,
+  <Page />,
   document.getElementById('root')
 );
 

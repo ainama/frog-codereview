@@ -4,6 +4,8 @@
 }
 
 @font-face {
+  font-family: 'myFamily';
+  src: url('../sass/pingfang.ttf');
 
 }
 
@@ -38,7 +40,7 @@ input:-ms-input-placeholder {
   flex-direction: column;
 }
 
-.round {
+.round-small {
   width: 4px;
   height: 4px;
   background: #e25e49;
@@ -82,7 +84,7 @@ input:-ms-input-placeholder {
 
   }
 
-  input[type='text']:focus {
+  input:focus {
     width: 220px;
     background: #ffffff;
     border: 1px solid #7fb6f5;
@@ -107,17 +109,10 @@ input:-ms-input-placeholder {
     color: #212121;
     //line-height: 30px;
     background: #ffffff;
-    border: 1px solid #e0e0e0;
     border-radius: 2px;
+    border: 1px solid #e25e49;
   }
 
-  input[type='text']:focus {
-    width: 220px;
-    background: #ffffff;
-    border: 1px solid #e25e49;
-    border-radius: 2px;
-    outline: none;
-  }
 }
 
 .input-disabled {
@@ -155,7 +150,7 @@ input:-ms-input-placeholder {
   left: 0;
 }
 
-.pointout-positiot-right {
+.pointout-position-right {
   position: absolute;
   left: 230px;
   top: 10px;
@@ -228,6 +223,15 @@ input:-ms-input-placeholder {
   input {
     padding-left: 33px;
   }
+
+  input:focus {
+    width: 100%;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 2px;
+    outline: none;
+  }
 }
 
 .personurl-right {
@@ -236,6 +240,15 @@ input:-ms-input-placeholder {
   input {
     padding-left: 10px;
     width: 196px;
+  }
+
+  input:focus {
+    width: 196px;
+    background: #ffffff;
+    border: none;
+    box-shadow: none;
+    border-radius: 2px;
+    outline: none;
 
   }
 }
