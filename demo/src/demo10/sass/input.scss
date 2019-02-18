@@ -31,13 +31,23 @@ input:-ms-input-placeholder {
   margin-left: 31px;
 }
 
-.box-row {
-  flex-direction: row;
-  align-items: center;
+.box-round {
+  display: flex;
+  margin-bottom: 12px;
 }
+
+.box-normal {
+  display: flex;
+}
+
 
 .box-column {
   flex-direction: column;
+}
+
+.box-row {
+  flex-direction: row;
+  align-items: center;
 }
 
 .round-small {
@@ -55,10 +65,12 @@ input:-ms-input-placeholder {
 }
 
 .textname-left {
-  margin-left: 20px;
+   margin-left: 20px;
+   margin-right: 20px;
+ }
+.textname-right {
   margin-right: 20px;
 }
-
 .textname-top {
   display: block;
   margin-bottom: 12px;
@@ -83,6 +95,9 @@ input:-ms-input-placeholder {
     box-sizing: border-box;
 
   }
+}
+
+.inputonfocus {
 
   input:focus {
     width: 220px;
@@ -110,10 +125,11 @@ input:-ms-input-placeholder {
     //line-height: 30px;
     background: #ffffff;
     border-radius: 2px;
-    border: 1px solid #e25e49;
+    border: 1px solid #e25e49 !important;
+    box-shadow: none !important;
   }
-
 }
+
 
 .input-disabled {
   background: #f5f5f5 !important;
@@ -198,44 +214,31 @@ input:-ms-input-placeholder {
 }
 
 .personurl {
-  width: 220px;
-  height: 30px;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+
 
   input {
-    width: 100%;
+    width: 220px;
     height: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
     box-sizing: border-box;
-    border: none;
     outline: none;
     font-family: PingFangSC-Regular;
     font-size: 12px;
     color: #212121;
     //line-height: 30px;
     background: none;
-  }
-}
-
-.personurl-left {
-  background: url('../images/person.svg') no-repeat 11px center;
-
-  input {
     padding-left: 33px;
+
   }
 
-  input:focus {
-    width: 100%;
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: 2px;
-    outline: none;
-  }
 }
 
 .personurl-right {
-  background: url('../images/search.svg') no-repeat 196px center;
+  background: url('../images/search.svg');
+  background-size: 14px 14px;
+  background-position: 196px center;
+  background-repeat: no-repeat;
 
   input {
     padding-left: 10px;
@@ -252,4 +255,6 @@ input:-ms-input-placeholder {
 
   }
 }
+
+
 
