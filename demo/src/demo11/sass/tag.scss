@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.tag-body {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.tag-style {
+  padding: 6.5px 17px;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 2px 0 rgba(66, 66, 66, 0.06);
+  border-radius: 3px;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #212121;
+  text-align: center;
+  line-height: 12px;
+  display: inline-block;
+}
+
+
+.tag-hover:hover {
+  color: #4990e2;
+  background: #f2f7fe;
+  border: 1px solid #7fb6f5;
+  box-shadow: 0 1px 2px 0 rgba(73, 144, 226, 0.10);
+}
+
+.tag-active:active {
+  color: #4990e2;
+  background: #f2f7fe;
+  border: 1px solid #7fb6f5;
+  box-shadow: 0 1px 2px 0 rgba(73, 144, 226, 0.10);
+}
+
+.tag-disabled {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 2px 0 rgba(211, 211, 211, 0.20);
+  color: #bbbbbb;
+}
+
+
+.addTagtext-body {
+  width: 87px;
+  height: 24px;
+  border: 1px #e0e0e0 dashed;
+  border-radius: 3px;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #212121;
+  line-height: 24px;
+  text-align: center;
+}
+
+.addtag-hover:hover {
+  border: 1px dashed #7fb6f5;
+  color: #4990e2;
+}
+
+.addtag-active:active {
+  border: 1px dashed #0f54a5;
+  color: #0f54a5;
+}
+
+.addtag-disabled {
+  border: 1px dashed #e0e0e0;
+  color: #bbbbbb;
+}

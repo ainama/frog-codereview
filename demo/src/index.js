@@ -7,7 +7,8 @@
 //import './demo05/index.js';  // react-redux 表单列表页面
 //import './demo08/index.js';  //ajax在componentDidMount里请求
 //import './demo09/index.js';  //refs的用法
-import './demo10/index.js';  //input组件
+//import './demo10/index.js';  //input组件
+import './demo11/index.js';  //tag组件
 
 
 

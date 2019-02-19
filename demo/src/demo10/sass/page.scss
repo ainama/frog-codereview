@@ -1,0 +1,99 @@
+
+.input-body {
+  column-count: 2;
+  width: 900px;
+  overflow-x: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.page {
+  width: 430px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+  margin-bottom: 10px;
+}
+
+.present {
+  font-size: 12px;
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  border-top: 1px #e0e0e0 dashed;
+  border-bottom: 1px #e0e0e0 dashed;
+
+}
+
+.present-color {
+  color: #333;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 15px;
+}
+
+.text-indent {
+  text-indent: 1rem;
+}
+
+.text-indent-next {
+  text-indent: 2rem;
+}
+
+.padding-left {
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+
+
+.text-indent-next-p {
+  text-indent: 3rem;
+}
+
+.text-indent-next-four {
+  text-indent: 4rem;
+}
+
+.atuo {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.body-table {
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.text-style {
+  color: #666;
+  margin-top: 6px;
+}
+
+.table-style {
+  border-collapse: collapse;
+  font-size: 12px;
+  color: #333333;
+}
+
+.table-style-tr tr {
+  border-bottom: 1px #e0e0e0 dashed;
+  height: 40px;
+}
+
+table tr th {
+  width: 120px;
+  height: 40px;
+  text-align: left;
+}
+
+table tr th:nth-child(2) {
+  width: 200px;
+}

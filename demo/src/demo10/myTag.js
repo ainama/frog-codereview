@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-import ModuleInput from './module.js';
-import ModuleTag from './myTag.js';
 
-export default class Page extends Component {
+import './sass/tag.scss';
+
+
+export default class Tag extends Component {
   constructor(props, context) {
     super(props);
     this.state = {};
@@ -12,10 +13,7 @@ export default class Page extends Component {
   render() {
     return (
       <div>
-        <ModuleInput />
-        <ModuleTag />
       </div>
     )
   }
 }
-

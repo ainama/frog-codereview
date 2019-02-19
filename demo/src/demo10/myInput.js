@@ -8,8 +8,8 @@ import './sass/input.scss';
 
 
 export default class Input extends Component {
-  constructor(porps, context) {
-    super(porps);
+  constructor(props, context) {
+    super(props);
     this.state = {
       focus: false
     };
@@ -265,7 +265,7 @@ Input.propTypes = {
   round: PropTypes.bool,
   onFocus: PropTypes.bool,
   wrongtext: PropTypes.bool,
-  //maxLength: PropTypes.number,
+  maxLength: PropTypes.number,
   rightButton: PropTypes.string,
   pictureicon: PropTypes.string,
   //defaultValue: PropTypes.string,
