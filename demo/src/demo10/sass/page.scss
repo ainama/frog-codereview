@@ -1,10 +1,44 @@
 
+.page-body {
+  width: 150px;
+  border: 1px #e0e0e0 solid;
+  position: fixed;
+  height: 100%;
+  background: #ffffff;
+  z-index: 9999;
+}
+
+.page-body ul li {
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  border-bottom: 1px #e0e0e0 solid;
+  list-style-type: none;
+}
+
+.page-body ul li a {
+  text-decoration: none;
+  color: #7fb6f5;
+  font-size: 14px;
+}
+
+.page-all {
+  display: flex;
+  flex-direction: row;
+}
+
+.page-flex {
+  width: 150px;
+  height: 100%;
+}
+
 .input-body {
   column-count: 2;
   width: 900px;
   overflow-x: auto;
-  padding: 20px;
   box-sizing: border-box;
+  padding: 15px;
 }
 
 .page {
@@ -95,5 +129,5 @@ table tr th {
 }
 
 table tr th:nth-child(2) {
-  width: 200px;
+  width: 220px;
 }

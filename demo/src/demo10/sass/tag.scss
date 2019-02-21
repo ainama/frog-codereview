@@ -1,0 +1,184 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.tag-body {
+  box-sizing: border-box;
+}
+
+.tag-style {
+  padding: 0 17px;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 2px 0 rgba(66, 66, 66, 0.06);
+  border-radius: 3px;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #212121;
+  text-align: center;
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+}
+
+.tag-style-input {
+  background: #fff !important;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 2px 0 rgba(66, 66, 66, 0.06);
+  border-radius: 3px;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #212121;
+  text-align: center;
+  line-height: 12px;
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  width: 65px;
+  padding: 0 !important;
+
+}
+
+.tag-active:visited {
+  color: #4990e2;
+  background: #f2f7fe;
+  border: 1px solid #7fb6f5;
+  box-shadow: 0 1px 2px 0 rgba(73, 144, 226, 0.10);
+}
+
+.tag-hover:hover {
+  color: #4990e2;
+  background: #f2f7fe;
+  border: 1px solid #7fb6f5;
+  box-shadow: 0 1px 2px 0 rgba(73, 144, 226, 0.10);
+}
+
+.tag-active:active {
+  color: #4990e2;
+  background: #f2f7fe;
+  border: 1px solid #7fb6f5;
+  box-shadow: 0 1px 2px 0 rgba(73, 144, 226, 0.10);
+}
+
+
+.tag-disabled {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 2px 0 rgba(211, 211, 211, 0.20);
+  color: #bbbbbb;
+  pointer-events: none;
+
+}
+
+
+.addTagtext-body {
+  width: 87px;
+  height: 24px;
+  border: 1px #e0e0e0 dashed;
+  border-radius: 3px;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #212121;
+  line-height: 24px;
+  text-align: center;
+  display: inline-block;
+}
+
+.addtag-hover:hover {
+  border: 1px dashed #7fb6f5;
+  color: #4990e2;
+}
+
+.addtag-active:active {
+  border: 1px dashed #0f54a5;
+  color: #0f54a5;
+}
+
+.addtag-disabled {
+  border: 1px dashed #e0e0e0;
+  color: #bbbbbb;
+  pointer-events: none;
+}
+
+.inputtag {
+  width: 87px;
+  height: 24px;
+  outline: none;
+  border: 1px dashed #7fb6f5;
+
+  input {
+    width: 87px;
+    height: 24px;
+    outline: none;
+    border: none;
+  }
+
+}
+
+.deleteTag-rightTop {
+  position: absolute;
+  right: -7px;
+  top: -7px;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 8px;
+  width: 14px;
+  height: 14px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 12px;
+
+
+}
+
+.deleteicon-style {
+  width: 6px;
+  height: 6px;
+  background-size: 100%;
+  vertical-align: middle;
+}
+
+.rightCenter-style {
+  margin-left: 9px;
+  cursor: pointer;
+}
+
+.margin-style {
+  padding-right: 10px;
+}
+
+.reviseicon-style {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.leftRadius-style:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 10px solid #fafafa;
+  border-bottom: 13px solid transparent;
+
+}
+
+.inputRevise {
+  width: 65px;
+  padding: 4px 0;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background: #fff;
+}
+.addTagText-span {
+  margin-right: 9px;
+
+}

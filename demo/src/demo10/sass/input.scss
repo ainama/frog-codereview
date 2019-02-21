@@ -3,12 +3,6 @@
   margin: 0;
 }
 
-@font-face {
-  font-family: 'myFamily';
-  src: url('../sass/pingfang.ttf');
-
-}
-
 input::-webkit-input-placeholder {
   color: #999999;
 }
@@ -63,12 +57,14 @@ input:-ms-input-placeholder {
 }
 
 .textname-left {
-   margin-left: 20px;
-   margin-right: 20px;
- }
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .textname-right {
   margin-right: 20px;
 }
+
 .textname-top {
   display: block;
   margin-bottom: 12px;
