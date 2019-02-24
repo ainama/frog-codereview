@@ -6,33 +6,68 @@ import './sass/page.scss'
 export default class Page extends Component {
   constructor(props, context) {
     super(props);
-    this.state = {};
+    this.state = {
+      tagTextStyle: this._tagTextStyle()
+    }
+  }
+
+  _tagTextStyle() {
+
+    let tagText = [
+      {
+        'tagName': 'tag',
+        'tagStyleColor': {
+          background: 'rgba(255,193,7,0.10)',
+          border: '1px solid #ffdc72',
+          boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)',
+          color: '#ffc107'
+        },
+        'svgFill': '#ffdc72'
+      },
+      {
+        'tagName': 'tag1',
+        'tagStyleColor': {
+          background: 'rgba(83, 109, 254, 0.10)',
+          border: '1px solid #8c9eff',
+          boxShadow: '0 1px 2px 0 rgba(83,109,254,0.06)',
+          color: '#536dfe'
+        },
+        'svgFill': '#8c9eff'
+      },
+      {
+        'tagName': 'tag2',
+      }
+    ];
+    let _tagText = JSON.stringify(tagText);
+
+    return _tagText;
   }
 
   render() {
-
     return (
       <div>
         <div className = 'input-body'>
           <div className = 'page'>
             <ModuleTag
-              tagText = 'tag,tag1'
-              tagHover = { true }
-              tagActive = { true }
+              tagText = { [{ 'tagName': 'tag' }] }
               addTag = { true }
-              addTagHover = { true }
-              addTagActive = { true }
             />
             <ModuleTag
-              tagText = 'tag'
+              tagText = { [{ 'tagName': 'tag' }] }
+              tagHover = { false }
+              tagActive = { false }
+              addTag = { true }
+              addTagHover = { false }
+              addTagActive = { false }
+            />
+            <ModuleTag
+              tagText = { [{ 'tagName': 'tag' }] }
               tagDisabled = { true }
               addTag = { true }
               addTagDisabled = { true }
             />
             <ModuleTag
               addTag = { true }
-              addTagHover = { true }
-              addTagActive = { true }
               addTagText = 'AddTag'
             />
             <div className = 'present'>
@@ -49,19 +84,27 @@ export default class Page extends Component {
                 <div className = 'text-indent-next'>
                   <p>&lt;ModuleTag </p>
                   <div className = 'text-indent-next-p'>
-                    <p>tagText = 'tag,tag1'</p>
-                    <p>tagHover = { '{true}' }</p>
-                    <p>tagActive = { '{true}' }</p>
+                    <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }}</p>
                     <p>addTag = { '{true}' }</p>
-                    <p>addTagHover = { '{true}' }</p>
-                    <p>addTagActive = { '{true}' }</p>
                   </div>
                   <p>/></p>
                 </div>
                 <div className = 'text-indent-next'>
                   <p>&lt;ModuleTag </p>
                   <div className = 'text-indent-next-p'>
-                    <p>tagText = 'tag'</p>
+                    <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
+                    <p>tagHover = { '{false}' }</p>
+                    <p>tagActive = { '{false}' }</p>
+                    <p>addTag = { '{true}' }</p>
+                    <p>addTagHover = { '{false}' }</p>
+                    <p>addTagActive = { '{false}' }</p>
+                  </div>
+                  <p>/></p>
+                </div>
+                <div className = 'text-indent-next'>
+                  <p>&lt;ModuleTag </p>
+                  <div className = 'text-indent-next-p'>
+                    <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                     <p>tagDisabled = { '{true}' }</p>
                     <p>addTag = { '{true}' }</p>
                     <p>addTagDisabled = { '{true}' }</p>
@@ -72,8 +115,6 @@ export default class Page extends Component {
                   <p>&lt;ModuleTag </p>
                   <div className = 'text-indent-next-p'>
                     <p>addTag = { '{true}' }</p>
-                    <p>addTagHover = { '{true}' }</p>
-                    <p>addTagActive = { '{true}' }</p>
                     <p>addTagText = 'AddTag'</p>
                   </div>
                   <p>/></p>
@@ -85,52 +126,108 @@ export default class Page extends Component {
           </div>
           <div className = 'page'>
             <ModuleTag
-              tagText = 'tag,tag1,tag2'
-              tagHover = { true }
-              tagActive = { true }
+              tagText = { [{ 'tagName': 'tag' }, { 'tagName': 'tag1' }, { 'tagName': 'tag2' }] }
               addTag = { true }
-              addTagHover = { true }
-              addTagActive = { true }
+              tagHover = { false }
               tagOnclik = { true }
             />
             <ModuleTag
-              tagText = 'tag,tag1,tag2'
-              tagHover = { true }
-              tagActive = { true }
+              tagText = { [{ 'tagName': 'tag' }, { 'tagName': 'tag1' }, { 'tagName': 'tag2' }] }
+              tagHover = { false }
+              tagActive = { false }
               addTag = { true }
-              addTagHover = { true }
-              addTagActive = { true }
+              tagOnclik = { true }
+              onlyTagActive = { true }
+            />
+            <div className = 'present'>
+              <p>基本使用</p>
+              <div className = 'text-style'>
+                <p>点击状态：多个</p>
+                <p>点击状态：只有一个</p>
+              </div>
+            </div>
+            <div className = 'present-color'>
+              <div className = 'margin-bottom'>import ModuleTag from './myTag.js';</div>
+              <div className = 'atuo'>
+                ReactDOM.render(
+                <p className = 'text-indent'>&lt;div></p>
+                <div className = 'text-indent-next'>
+                  <p>&lt;ModuleTag </p>
+                  <div className = 'text-indent-next-p'>
+                    <p>tagText = { "{ [{ 'tagName': 'tag' }, { 'tagName': 'tag1' }, { 'tagName': 'tag2' }] }" }</p>
+                    <p>tagHover = { '{false}' }</p>
+                    <p>addTag = { '{true}' }</p>
+                    <p>tagOnclik = { '{true}' }</p>
+                  </div>
+                  <p>/></p>
+                </div>
+                <div className = 'text-indent-next'>
+                  <p>&lt;ModuleTag </p>
+                  <div className = 'text-indent-next-p'>
+                    <p>tagText = { "{ [{ 'tagName': 'tag' }, { 'tagName': 'tag1' }, { 'tagName': 'tag2' }] }" }</p>
+                    <p>tagHover = { '{false}' }</p>
+                    <p>tagActive = { '{false}' }</p>
+                    <p>addTag = { '{true}' }</p>
+                    <p>tagOnclik = { '{true}' }</p>
+                    <p>onlyTagActive = { '{true}' }</p>
+                  </div>
+                  <p>/></p>
+                </div>
+                <p className = 'text-indent'>&lt;/div>,</p>
+                mountNode);
+              </div>
+            </div>
+          </div>
+
+          <div className = 'page'>
+            <ModuleTag
+              tagText = { [{ 'tagName': 'tag' }, { 'tagName': 'tag1' }] }
+              addTag = { true }
+              tagOnclik = { true }
+            />
+            <ModuleTag
+              tagText = { [{ 'tagName': 'tag' }, { 'tagName': 'tag1' }] }
+              addTag = { true }
               tagOnclik = { true }
               deleteTag = 'rightTop' // rightTop,rightCenter
             />
             <ModuleTag
-              tagText = 'tag,tag1,tag2'
-              tagHover = { true }
-              tagActive = { true }
+              tagText = { [{ 'tagName': 'tag' }, { 'tagName': 'tag1' }] }
               addTag = { true }
-              addTagHover = { true }
-              addTagActive = { true }
               tagOnclik = { true }
               deleteTag = 'rightCenter' // rightTop,rightCenter
             />
             <ModuleTag
-              tagText = 'tag,tag1,tag2'
-              tagHover = { true }
-              tagActive = { true }
+              tagText = { [
+                {
+                  'tagName': 'tag',
+                  'tagStyleColor': {
+                    background: 'rgba(255,193,7,0.10)',
+                    border: '1px solid #ffdc72',
+                    boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)',
+                    color: '#ffc107'
+                  },
+                  'svgFill': '#ffdc72'
+                },
+                {
+                  'tagName': 'tag1',
+                  'tagStyleColor': {
+                    background: 'rgba(83, 109, 254, 0.10)',
+                    border: '1px solid #8c9eff',
+                    boxShadow: '0 1px 2px 0 rgba(83,109,254,0.06)',
+                    color: '#536dfe'
+                  },
+                  'svgFill': '#8c9eff'
+
+                },
+                {
+                  'tagName': 'tag2',
+                }
+              ] }
               addTag = { true }
-              addTagHover = { true }
-              addTagActive = { true }
               tagOnclik = { true }
               deleteTag = 'rightTop' // rightTop,rightCenter
               tagRevise = { true }
-              tagColor = { {
-                background: 'rgba(255,193,7,0.10)',
-                border: '1px solid #ffdc72',
-                boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)',
-                borderRadius: '3px',
-                color: '#ffc107',
-              } }
-              tagStyleIndex = { 0 }  //tag下标
             />
             <div className = 'present'>
               <p>基本使用</p>
@@ -147,12 +244,8 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag,tag1,tag2'</p>
-                      <p>tagHover = { '{true}' }</p>
-                      <p>tagActive = { '{true}' }</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>addTag = { '{true}' }</p>
-                      <p>addTagHover = { '{true}' }</p>
-                      <p>addTagActive = { '{true}' }</p>
                       <p>tagOnclik = { '{true}' }</p>
                     </div>
                     <p>/></p>
@@ -160,12 +253,8 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag,tag1,tag2'</p>
-                      <p>tagHover = { '{true}' }</p>
-                      <p>tagActive = { '{true}' }</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>addTag = { '{true}' }</p>
-                      <p>addTagHover = { '{true}' }</p>
-                      <p>addTagActive = { '{true}' }</p>
                       <p>tagOnclik = { '{true}' }</p>
                       <p>deleteTag = 'rightTop'</p>
                     </div>
@@ -174,12 +263,8 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag,tag1,tag2'</p>
-                      <p>tagHover = { '{true}' }</p>
-                      <p>tagActive = { '{true}' }</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>addTag = { '{true}' }</p>
-                      <p>addTagHover = { '{true}' }</p>
-                      <p>addTagActive = { '{true}' }</p>
                       <p>tagOnclik = { '{true}' }</p>
                       <p>deleteTag = 'rightCenter'</p>
                     </div>
@@ -188,23 +273,14 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag,tag1,tag2'</p>
-                      <p>tagHover = { '{true}' }</p>
-                      <p>tagActive = { '{true}' }</p>
+                      <p>tagText =
+                        <span>{ '{' }</span>
+                        { this.state.tagTextStyle }
+                        <span>{ '}' }</span>
+                      </p>
                       <p>addTag = { '{true}' }</p>
-                      <p>addTagHover = { '{true}' }</p>
-                      <p>addTagActive = { '{true}' }</p>
                       <p>tagOnclik = { '{true}' }</p>
                       <p>tagRevise = { '{true}' }</p>
-                      <p>tagColor = "
-                        background: 'rgba(255,193,7,0.10)',
-                        border: '1px solid #ffdc72',
-                        boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)',
-                        borderRadius: '3px',
-                        color: '#ffc107',
-                        "
-                      </p>
-                      <p>tagStyleIndex = { '{0}' } </p>
                     </div>
                     <p>/></p>
                   </div>
@@ -216,21 +292,15 @@ export default class Page extends Component {
           </div>
           <div className = 'page'>
             <ModuleTag
-              tagText = 'tag'
-              tagHover = { true }
-              tagActive = { true }
+              tagText = { [{ 'tagName': 'tag' }] }
               size = 'large' //large, default,small
             />
             <ModuleTag
-              tagText = 'tag'
-              tagHover = { true }
-              tagActive = { true }
+              tagText = { [{ 'tagName': 'tag' }] }
               size = 'default' //large, default,small
             />
             <ModuleTag
-              tagText = 'tag'
-              tagHover = { true }
-              tagActive = { true }
+              tagText = { [{ 'tagName': 'tag' }] }
               size = 'small' //large, default,small
             />
 
@@ -249,9 +319,7 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag'</p>
-                      <p>tagHover = { '{true}' }</p>
-                      <p>tagActive = { '{true}' }</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>size = 'large'</p>
                     </div>
                     <p>/></p>
@@ -259,9 +327,7 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag'</p>
-                      <p>tagHover = { '{true}' }</p>
-                      <p>tagActive = { '{true}' }</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>size = 'default'</p>
                     </div>
                     <p>/></p>
@@ -269,9 +335,7 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag'</p>
-                      <p>tagHover = { '{true}' }</p>
-                      <p>tagActive = { '{true}' }</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>size = 'small'</p>
                     </div>
                     <p>/></p>
@@ -285,25 +349,25 @@ export default class Page extends Component {
           </div>
           <div className = 'page'>
             <ModuleTag
-              tagText = 'tag,tag1,tag2'
-              tagColor = { {
-                background: 'rgba(255,193,7,0.10)',
-                border: '1px solid #ffdc72',
-                boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)',
-                borderRadius: '3px',
-                color: '#ffc107',
-              } }
-            />
-            <ModuleTag
-              tagText = 'tag,tag1,tag2'
-              tagColor = { {
-                background: 'rgba(255,193,7,0.10)',
-                border: '1px solid #ffdc72',
-                boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)',
-                borderRadius: '3px',
-                color: '#ffc107',
-              } }
-              tagStyleIndex = { 0 }  //tag下标
+              tagText = { [
+                {
+                  'tagName': 'tag',
+                  'tagStyleColor': {
+                    background: 'rgba(255,193,7,0.10)', border: '1px solid #ffdc72',
+                    boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)', color: '#ffc107'
+                  }
+                },
+                {
+                  'tagName': 'tag1',
+                  'tagStyleColor': {
+                    background: 'rgba(83, 109, 254, 0.10)', border: '1px solid #8c9eff',
+                    boxShadow: '0 1px 2px 0 rgba(83,109,254,0.06)', color: '#536dfe'
+                  }
+                },
+                {
+                  'tagName': 'tag2',
+                }
+              ] }
             />
             <div className = 'present'>
               <p>基本使用</p>
@@ -321,31 +385,11 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag,tag1,tag2'</p>
-                      <p>tagColor = "
-                        background: 'rgba(255,193,7,0.10)',
-                        border: '1px solid #ffdc72',
-                        boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)',
-                        borderRadius: '3px',
-                        color: '#ffc107',
-                        "
+                      <p>tagText =
+                        <span>{ '{' }</span>
+                        { this.state.tagTextStyle }
+                        <span>{ '}' }</span>
                       </p>
-                    </div>
-                    <p>/></p>
-                  </div>
-                  <div>
-                    <p>&lt;ModuleTag</p>
-                    <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag,tag1,tag2'</p>
-                      <p>tagColor = "
-                        background: 'rgba(255,193,7,0.10)',
-                        border: '1px solid #ffdc72',
-                        boxShadow: '0 1px 2px 0 rgba(255,193,7,0.06)',
-                        borderRadius: '3px',
-                        color: '#ffc107',
-                        "
-                      </p>
-                      <p>tagStyleIndex = { '{0}' } </p>
                     </div>
                     <p>/></p>
                   </div>
@@ -358,15 +402,15 @@ export default class Page extends Component {
           </div>
           <div className = 'page'>
             <ModuleTag
-              tagText = 'tag'
+              tagText = { [{ 'tagName': 'tag' }] }
               tagStyle = 'rightRadius' //rightRadius，leftRadius,default,allRadius
             />
             <ModuleTag
-              tagText = 'tag'
+              tagText = { [{ 'tagName': 'tag' }] }
               tagStyle = 'default' //rightRadius，leftRadius,default,allRadius
             />
             <ModuleTag
-              tagText = 'tag'
+              tagText = { [{ 'tagName': 'tag' }] }
               tagStyle = 'allRadius' //rightRadius，leftRadius,default,allRadius
             />
             <div className = 'present'>
@@ -385,7 +429,7 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag'</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>tagStyle = 'rightRadius'</p>
                     </div>
                     <p>/></p>
@@ -393,7 +437,7 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag'</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>tagStyle = 'default'</p>
                     </div>
                     <p>/></p>
@@ -401,7 +445,7 @@ export default class Page extends Component {
                   <div>
                     <p>&lt;ModuleTag</p>
                     <div className = 'text-indent-next-p'>
-                      <p>tagText = 'tag'</p>
+                      <p>tagText = { "{ [{ 'tagName': 'tag' }] }" }</p>
                       <p>tagStyle = 'allRadius'</p>
                     </div>
                     <p>/></p>
@@ -431,15 +475,15 @@ export default class Page extends Component {
             </tr>
             <tr>
               <td>taghover</td>
-              <td>tag标签鼠标经过态，默认：false</td>
+              <td>tag标签鼠标经过态，默认：true</td>
               <td>boolean</td>
-              <td>false</td>
+              <td>true</td>
             </tr>
             <tr>
               <td>tagActive</td>
-              <td>tag标签点击态，默认：false</td>
+              <td>tag标签点击态，默认：true</td>
               <td>boolean</td>
-              <td>false</td>
+              <td>true</td>
             </tr>
             <tr>
               <td>tagDisabled</td>
@@ -461,15 +505,15 @@ export default class Page extends Component {
             </tr>
             <tr>
               <td>addTagHover</td>
-              <td>tag添加标签鼠标经过态，默认：false</td>
+              <td>tag添加标签鼠标经过态，默认：true</td>
               <td>boolean</td>
-              <td>false</td>
+              <td>true</td>
             </tr>
             <tr>
               <td>addTagActive</td>
-              <td>tag添加标签点击态，默认：false</td>
+              <td>tag添加标签点击态，默认：true</td>
               <td>boolean</td>
-              <td>false</td>
+              <td>true</td>
             </tr>
             <tr>
               <td>addTagDisabled</td>
@@ -516,6 +560,18 @@ export default class Page extends Component {
             <tr>
               <td>tagStyle</td>
               <td>标签展示：rightRadius,default,allRadius</td>
+              <td>string</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>onlyTagActive</td>
+              <td>有唯一选中态，默认false</td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>svgFill</td>
+              <td>tag标签修改图标颜色</td>
               <td>string</td>
               <td></td>
             </tr>

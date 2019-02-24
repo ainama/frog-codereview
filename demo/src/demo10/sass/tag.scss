@@ -23,6 +23,7 @@
   position: relative;
   height: 25px;
   line-height: 25px;
+  cursor: pointer;
 }
 
 .tag-style-input {
@@ -41,14 +42,7 @@
   position: relative;
   width: 65px;
   padding: 0 !important;
-
-}
-
-.tag-active:visited {
-  color: #4990e2;
-  background: #f2f7fe;
-  border: 1px solid #7fb6f5;
-  box-shadow: 0 1px 2px 0 rgba(73, 144, 226, 0.10);
+  cursor: pointer;
 }
 
 .tag-hover:hover {
@@ -56,15 +50,18 @@
   background: #f2f7fe;
   border: 1px solid #7fb6f5;
   box-shadow: 0 1px 2px 0 rgba(73, 144, 226, 0.10);
+
+
 }
 
-.tag-active:active {
+
+.tag-active {
   color: #4990e2;
   background: #f2f7fe;
   border: 1px solid #7fb6f5;
   box-shadow: 0 1px 2px 0 rgba(73, 144, 226, 0.10);
-}
 
+}
 
 .tag-disabled {
   background: #f5f5f5;
@@ -72,7 +69,6 @@
   box-shadow: 0 1px 2px 0 rgba(211, 211, 211, 0.20);
   color: #bbbbbb;
   pointer-events: none;
-
 }
 
 
@@ -87,6 +83,9 @@
   line-height: 24px;
   text-align: center;
   display: inline-block;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 
 .addtag-hover:hover {
@@ -94,7 +93,7 @@
   color: #4990e2;
 }
 
-.addtag-active:active {
+.addtag-active {
   border: 1px dashed #0f54a5;
   color: #0f54a5;
 }
@@ -116,6 +115,8 @@
     height: 24px;
     outline: none;
     border: none;
+    padding-left: 4px;
+    box-sizing: border-box;
   }
 
 }
@@ -167,7 +168,6 @@
   border-top: 13px solid transparent;
   border-right: 10px solid #fafafa;
   border-bottom: 13px solid transparent;
-
 }
 
 .inputRevise {
@@ -177,7 +177,10 @@
   outline: none;
   border-radius: 3px;
   background: #fff;
+  padding-left: 4px;
+  box-sizing: border-box;
 }
+
 .addTagText-span {
   margin-right: 9px;
 

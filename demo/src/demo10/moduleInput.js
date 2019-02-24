@@ -7,7 +7,8 @@ export default class Page extends Component {
   constructor(props, context) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
+      result: null
     };
   }
 
@@ -15,7 +16,16 @@ export default class Page extends Component {
     let _value = e.target.value;
     let pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？%]");
     let result = _value.match(pattern);
-    if (result === null || result === 'null') {
+    this.setState({
+      value: _value,
+      result: result
+    })
+  };
+
+  _inputOnBlur() {
+    let _result = this.state.result;
+
+    if (_result === null || _result === 'null') {
       this.setState({
         wrongtext: false,
       })
@@ -24,10 +34,8 @@ export default class Page extends Component {
         wrongtext: true,
       })
     }
-    this.setState({
-      value: _value
-    })
-  };
+
+  }
 
   _myFunction = (e) => {
     //console.log(e.target.value);
@@ -43,7 +51,12 @@ export default class Page extends Component {
             <Input
               type = 'text'
               placeholder = 'Username'
-              onFocus = { true }
+            />
+            <div className = 'margin-bottom'></div>
+            <Input
+              type = 'text'
+              placeholder = 'Username'
+              onFocus = { false }
             />
             <div className = 'margin-bottom'></div>
             <Input
@@ -58,7 +71,6 @@ export default class Page extends Component {
             <div className = 'margin-bottom'></div>
             <Input
               type = 'text'
-              onFocus = { true }
               placeholder = 'Username'
               inputWidth = '300px'
               inputHeight = '40px'
@@ -67,7 +79,7 @@ export default class Page extends Component {
               <p>基本使用</p>
               <div className = 'text-style'>
                 <p>默认状态，有默认值defaultValue，禁止状态，可调节input宽高</p>
-                <p>onFocus:获取焦点，boolean类型，默认为 false </p>
+                <p>onFocus:获取焦点，boolean类型，默认为 true </p>
               </div>
             </div>
             <div className = 'present-color'>
@@ -76,13 +88,13 @@ export default class Page extends Component {
                 ReactDOM.render(
                 <p className = 'text-indent'>&lt;div></p>
                 <div className = 'text-indent-next'>
-                  <p>&lt;Input type = 'text' placeholder = 'Username' onFocus = { '{ true }' }' /> </p>
+                  <p>&lt;Input type = 'text' placeholder = 'Username' /> </p>
+                  <p>&lt;Input type = 'text' placeholder = 'Username' onFocus = { '{ false }' }' /> </p>
                   <p>&lt;Input type = 'text' defaultValue = 'hello' /></p>
                   <p>&lt;Input type = 'text' disabled /></p>
                   <p>&lt;Input </p>
                   <div className = 'text-indent-next-p'>
                     <p>type = 'text'</p>
-                    <p>onFocus = { '{true}' }</p>
                     <p>placeholder = 'Username'</p>
                     <p>inputWidth = '300px'</p>
                     <p>inputHeight = '40px'</p>
@@ -101,24 +113,22 @@ export default class Page extends Component {
               round = { true }
               title = '姓名'
               normaltext = '这是提示文字'
-              onFocus = { true }
             />
             <div className = 'margin-bottom'></div>
             <Input
               type = 'text'
               placeholder = 'Username'
-              onFocus = { true }
               round = { true }
               title = '姓名'
               normaltext = '这是提示文字'
               normaltextBottom
+              //rightButton = 'Submit'
             />
             <div className = 'margin-bottom'></div>
             <div className = 'margin-bottom'></div>
             <Input
               type = 'text'
               placeholder = 'Username'
-              onFocus = { true }
               round = { false }
               title = '姓名'
               normaltext = '这是提示文字'
@@ -129,7 +139,6 @@ export default class Page extends Component {
             <Input
               type = 'text'
               placeholder = 'Username'
-              onFocus = { true }
               round = { true }
               title = '姓名'
               normaltext = '这是提示文字'
@@ -212,12 +221,12 @@ export default class Page extends Component {
               placeholder = 'Username'
               round = { true }
               title = '姓名'
-              onFocus = { true }
-              onChange = { this._handleInputname }
+              onChange = { (e) => this._handleInputname(e) }
               value = { value }
               normaltext = '这是提示文字'
               replaceNormaltext = '已输入特殊字符'
               wrongtext = { this.state.wrongtext }
+              onBlur = { () => this._inputOnBlur() }
             />
             <div className = 'present'>
               <p>基本使用</p>
@@ -235,16 +244,25 @@ export default class Page extends Component {
                     <p> super(props);</p>
                     <p> this.state = { '{' } </p>
                     <p className = 'text-indent-next-p'> value: ''</p>
+                    <p className = 'text-indent-next-p'> result:null</p>
                     <p>};</p>
                   </div>
                   <p className = 'text-indent'>}</p>
-                  <p>_handleInputname = (e) => { '{ ' }</p>
+                  <p>_handleInputname(e) { '{ ' }</p>
                   <div className = 'text-indent-next'>
                     <p>let _value = e.target.value;</p>
                     <p>let pattern = new
                       RegExp({ "[`~!@#$^&*()=|{ }':;',\\[\\].<>/?~！@#￥……&*（）——|{ }【】‘；：”“'。，、？%]" });</p>
                     <p>let result = _value.match(pattern);</p>
-                    <p>if (result === null || result === 'null') { '{' }</p>
+                    <p>this.setState({ '{' }</p>
+                    <p className = 'text-indent-next-p'>value: _value</p>
+                    <p>})</p>
+                  </div>
+                  <p>}；</p>
+                  <p>_inputOnBlur(){ '{ ' }</p>
+                  <div className = 'text-indent-next'>
+                    <p>let _result = this.state.result;</p>
+                    <p>if (_result === null || _result === 'null') { '{' }</p>
                     <div className = 'text-indent-next-p'>
                       <p>this.setState({ '{' }</p>
                       <p className = 'text-indent-next-four'>wrongtext: false,</p>
@@ -257,9 +275,6 @@ export default class Page extends Component {
                       <p> })</p>
                     </div>
                     <p>}</p>
-                    <p>this.setState({ '{' }</p>
-                    <p className = 'text-indent-next-four'>value: _value</p>
-                    <p>})</p>
                   </div>
                   <p>}；</p>
                   <p> render() { '{' }</p>
@@ -274,12 +289,12 @@ export default class Page extends Component {
                         <p>placeholder = 'Username'</p>
                         <p>round = { '{true}' }</p>
                         <p>title = '姓名'</p>
-                        <p>onFocus = { '{true}' }</p>
-                        <p>onChange = { '{ this._handleInputname}' }</p>
+                        <p>onChange = { '{ (e)=>this._handleInputname(e)}' }</p>
                         <p>value = { '{value}' }</p>
                         <p>normaltext = '这是提示文字'</p>
                         <p>replaceNormaltext = '已输入特殊字符'</p>
                         <p>wrongtext = { '{ this.state.wrongtext }' }</p>
+                        <p>onBlur = { '{ () => this._inputOnBlur() }' }</p>
                       </div>
                       <p>/></p>
                     </div>
@@ -334,7 +349,6 @@ export default class Page extends Component {
               type = 'text'
               placeholder = 'Username'
               maxLength = { 10 }
-              onFocus = { true }
               pictureicon = 'iconleft'
             />
             <div className = 'margin-bottom'></div>
@@ -374,7 +388,6 @@ export default class Page extends Component {
                       <p>type = 'text'</p>
                       <p>maxLength = { '{10}' }</p>
                       <p>placeholder = 'Username'</p>
-                      <p>onFocus = { '{true}' }</p>
                       <p>pictureicon = 'iconleft'</p>
                     </div>
                     <p>/></p>
@@ -469,9 +482,15 @@ export default class Page extends Component {
             </tr>
             <tr>
               <td>onFocus</td>
-              <td>获取焦点:默认为 false</td>
+              <td>获取焦点:默认为 true</td>
               <td>boolean</td>
-              <td>false</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>onBlur</td>
+              <td>失去焦点:默认为 true</td>
+              <td>boolean</td>
+              <td>true</td>
             </tr>
             <tr>
               <td>maxLength</td>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import personicon from '../img/person.svg';
-import searchicon from '../img/search.png';
+import PersonIcon from '../img/person.svg';
+import SearchIcon from '../img/search.png';
 
 import './sass/input.scss';
-
 
 export default class Input extends Component {
   constructor(props, context) {
@@ -15,62 +14,32 @@ export default class Input extends Component {
     };
   }
 
-  _inputonfocus() {
+  _inputOnFocus(t) {
+    if (!t) return;
+
     this.setState({
       focus: true,
     });
   }
 
-  _inputFocusBorder() {
+  _inputFocusBorder(t) {
+    if (!t) return;
+
     this.refs.myInput.focus();
     this.setState({
       focus: true,
     });
-    //console.log(this.props.value);
   }
 
-  focus() {
-    this.setState({
-      focus: true,
-    });
-  }
+  _AllInputStyle() {
 
-  _without() {
-
-  }
-
-  render() {
-    let {
-      value,
-      placeholder,
-      title,
-      round,
-      type,
-      layout,
-      maxLength,
-      normaltext,
-      normaltextBottom,
-      wrongtext,
-      onChange,
-      disabled,
-      pictureicon,
-      rightButton,
-      //inputStyle,
-      onSearch,
-      replaceNormaltext,
-      leftIconUrl,
-      iconLeftStyle,
-      inputWidth,
-      inputHeight,
-      rightIconUrl,
-      iconRightStyle,
-      onFocus,
-      defaultValue,
-      onInput
-
-    } = this.props;
-
-    let { focus } = this.state;
+    let inputWidth = this.props.inputWidth;
+    let inputHeight = this.props.inputHeight;
+    let pictureicon = this.props.pictureicon;
+    let leftIconUrl = this.props.leftIconUrl;
+    let iconLeftStyle = this.props.iconLeftStyle;
+    let rightIconUrl = this.props.rightIconUrl;
+    let iconRightStyle = this.props.iconRightStyle;
 
     let iconBackground = {};
 
@@ -85,13 +54,12 @@ export default class Input extends Component {
         height: '30px'
       };
     }
-
     if (pictureicon === 'iconleft') {
       if (leftIconUrl === undefined) {
         iconBackground = {
           width: inputWidth === undefined ? '220px' : inputWidth,
           height: inputHeight === undefined ? '30px' : inputHeight,
-          backgroundImage: `url(${ personicon })`,
+          backgroundImage: `url(${ PersonIcon })`,
           backgroundSize: iconLeftStyle === undefined ? '15px 12px' : iconLeftStyle,
           backgroundPosition: '11px center',
           backgroundRepeat: 'no-repeat',
@@ -112,7 +80,7 @@ export default class Input extends Component {
         iconBackground = {
           width: inputWidth,
           height: inputHeight,
-          backgroundImage: `url(${ searchicon })`,
+          backgroundImage: `url(${ SearchIcon })`,
           backgroundSize: iconRightStyle === undefined ? '14px 14px' : iconRightStyle,
           backgroundPosition: '95% center',
           backgroundRepeat: 'no-repeat',
@@ -126,9 +94,41 @@ export default class Input extends Component {
           backgroundSize: iconRightStyle === undefined ? '14px 14px' : iconRightStyle,
           backgroundPosition: '95% center',
           backgroundRepeat: 'no-repeat',
+          paddingRight: '30px'
         }
       }
     }
+
+    return iconBackground;
+  }
+
+  render() {
+    let {
+      value,
+      placeholder,
+      title,
+      round,
+      type,
+      layout,
+      maxLength,
+      normaltext,
+      normaltextBottom,
+      wrongtext,
+      onChange,
+      disabled,
+      pictureicon,
+      rightButton,
+      onSearch,
+      replaceNormaltext,
+      onFocus,
+      defaultValue,
+      onInput,
+      onBlur
+
+    } = this.props;
+
+    let { focus } = this.state;
+
 
     return (
       <div className = { `box ${ layout ? 'box-column' : 'box-row' }` }>
@@ -149,20 +149,22 @@ export default class Input extends Component {
           }
         </div>
         <div
-          className = { ` box-normal ${ normaltextBottom ? 'box-column' : ' box-row' } ${ rightButton ? ' box-row ' : '' }` }>
-
+          className = { `
+            box-normal
+            ${ normaltextBottom ? 'box-column' : 'box-row' }
+            ${ rightButton ? ' box-row ' : '' }
+          ` }>
           <div
             className = { `
               ${ wrongtext ? 'wronginputstyle' : 'inputstyle' }
               ${ pictureicon === 'iconleft' ? ' personurl' : '' }
               ${ focus ? 'inputonfocus' : '' }
               ` }>
-
             <input
-              style = { iconBackground }
+              style = { this._AllInputStyle() }
               className = { `
-              ${ disabled ? 'input-disabled' : '' }
-              ${ rightButton === undefined ? '' : rightButton.length > 0 ? 'input-border-right' : '' }
+                ${ disabled ? 'input-disabled' : '' }
+                ${ rightButton === undefined ? '' : rightButton.length > 0 ? 'input-border-right' : '' }
               ` }
               disabled = { disabled }
               type = { type }
@@ -170,13 +172,11 @@ export default class Input extends Component {
               maxLength = { maxLength }
               onChange = { onChange }
               value = { value }
-              onClick = { onFocus ? () => {
-                this._inputonfocus()
-              } : this._without() }
               ref = 'myInput'
               defaultValue = { defaultValue }
               onInput = { onInput }
-
+              onFocus = { () => this._inputOnFocus(onFocus) }
+              onBlur = { onBlur }
             />
             {
               layout === undefined && normaltextBottom &&
@@ -222,7 +222,7 @@ export default class Input extends Component {
             (
               <button
                 className = 'button-submit'
-                onClick = { onSearch ? () => this._inputFocusBorder() : this._without() }>{ rightButton }</button>
+                onClick = { () => this._inputFocusBorder(onSearch) }>{ rightButton }</button>
             )
           }
           {
@@ -258,7 +258,7 @@ export default class Input extends Component {
 }
 Input.defaultProps = {
   round: false,
-  onFocus: false,
+  onFocus: true,
   wrongtext: false
 };
 Input.propTypes = {
